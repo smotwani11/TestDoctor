@@ -62,3 +62,10 @@ Tests that create versions or do conversions must have countdown latches.
 - **30 files** missing PACKAGE_INSTALL mappings
 - **11 files** missing countdown latches
 
+## Demo
+
+See `DEMO.md` for a complete walkthrough.
+
+## Presentation
+
+See `PRESENTATION.md` for hackathon pitch slides.
