@@ -64,7 +64,7 @@ class TestDoctorScanner:
                     rule=1,
                     rule_name="Missing registerNewOrg()",
                     description="Test creates scratch orgs but doesn't register them with message queue framework",
-                    severity="HIGH",
+                    severity="MEDIUM",
                     line_number=self._find_line_number(lines, 'createScratchOrg')
                 ))
             
@@ -77,7 +77,7 @@ class TestDoctorScanner:
                     rule=2,
                     rule_name="Missing USE_TEST_QUEUE",
                     description="Test extends BaseTest and does package operations but doesn't use test queues",
-                    severity="HIGH",
+                    severity="MEDIUM",
                     line_number=self._find_line_number(lines, 'extends BaseTest')
                 ))
             
@@ -551,7 +551,7 @@ class TestDoctorReporter:
     def print_summary(self):
         """Print summary to console"""
         print("\n" + "="*80)
-        print("📊 TESTGUARD SCAN RESULTS")
+        print("📊 TESTDOCTOR SCAN RESULTS")
         print("="*80)
         
         if not self.issues:
