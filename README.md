@@ -28,16 +28,16 @@ These failures cause tests to timeout after 20+ minutes, blocking releases and w
 
 ```bash
 # Scan for issues
-python testdoctor.py scan --path /path/to/tests
+python3 testdoctor.py scan --path /path/to/tests
 
 # Generate report
-python testdoctor.py report
+python3 testdoctor.py report
 
 # Auto-fix issues
-python testdoctor.py fix --rule 1 --auto
+python3 testdoctor.py fix --rule 1 --auto
 
 # Fix all rules
-python testdoctor.py fix --all --auto
+python3 testdoctor.py fix --all --auto
 ```
 
 ## Rules
@@ -64,8 +64,4 @@ Tests that create versions or do conversions must have countdown latches.
 
 ## Demo
 
-See `DEMO.md` for a complete walkthrough.
-
-## Presentation
-
-See `PRESENTATION.md` for hackathon pitch slides.
+Refer `demo.sh` for a complete walkthrough.
