@@ -27,8 +27,11 @@ These failures cause tests to timeout after 20+ minutes, blocking releases and w
 ## Quick Start
 
 ```bash
-# Scan for issues
+# Scan a directory for issues
 python3 testdoctor.py scan --path /path/to/tests
+
+# Scan a specific file
+python3 testdoctor.py scan --path /path/to/MyTest.java
 
 # Generate report
 python3 testdoctor.py report

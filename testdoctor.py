@@ -42,8 +42,19 @@ class TestDoctorScanner:
         """Scan all test files for all rules"""
         print(f"🔍 Scanning tests in: {self.test_dir}")
         
-        test_files = glob.glob(f"{self.test_dir}/**/*Test.java", recursive=True)
-        print(f"📁 Found {len(test_files)} test files")
+        # Check if path is a file or directory
+        if os.path.isfile(self.test_dir):
+            # Single file mode
+            if self.test_dir.endswith('Test.java'):
+                test_files = [self.test_dir]
+                print(f"📄 Scanning single file: {os.path.basename(self.test_dir)}")
+            else:
+                print(f"⚠️  File must end with 'Test.java'")
+                return self.issues
+        else:
+            # Directory mode
+            test_files = glob.glob(f"{self.test_dir}/**/*Test.java", recursive=True)
+            print(f"📁 Found {len(test_files)} test files")
         
         for file_path in test_files:
             self.scan_file(file_path)
@@ -665,7 +676,7 @@ def main():
     
     # Scan command
     scan_parser = subparsers.add_parser('scan', help='Scan tests for issues')
-    scan_parser.add_argument('--path', required=True, help='Path to test directory')
+    scan_parser.add_argument('--path', required=True, help='Path to test directory or specific test file')
     
     # Report command
     report_parser = subparsers.add_parser('report', help='Generate reports')
